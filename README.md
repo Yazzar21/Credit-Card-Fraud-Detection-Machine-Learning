@@ -7,6 +7,16 @@ Di industri perbankan modern, keamanan transaksi kartu kredit adalah prioritas u
 2. **Jebakan Akurasi (*The Accuracy Trap*):** Model yang asal menebak "Normal" akan tetap menghasilkan akurasi tinggi, namun gagal total mendeteksi penipu.
 3. **Biaya Bisnis akibat *False Positive*:** Memblokir kartu kredit nasabah sah secara keliru akan merusak reputasi bank dan memicu komplain masif pada layanan *Customer Service*.
 
+## 🗄️ Database & Exploratory Data Analysis (SQL)
+Sebelum melakukan pemodelan Machine Learning dengan Python, eksplorasi awal dan validasi integritas data dilakukan secara langsung melalui database relasional menggunakan SQLite (DB Browser for SQLite).
+
+### Kueri SQL yang Digunakan:
+1. **Pemeriksaan Struktur & Sampel Data:**
+   ```sql
+   SELECT * 
+   FROM creditcard 
+   LIMIT 5;
+
 ## 📊 Eksplorasi Data & Penanganan Ketimpangan (SMOTE)
 Melalui skrip `Prediksi_Fraud.py`, data dinetralkan menggunakan teknik **SMOTE** (*Synthetic Minority Over-sampling Technique*) pada data latih, serta standarisasi fitur menggunakan **RobustScaler** untuk meredam efek *outlier*.
 
