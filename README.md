@@ -17,6 +17,7 @@ Sebelum melakukan pemodelan Machine Learning dengan Python, eksplorasi awal dan 
    FROM creditcard 
    LIMIT 5;
 2. **Analisis Ketimpangan Kelas (Extreme Imbalanced Class):**
+   ```sql
    SELECT 
     Class, 
     COUNT(*) AS jumlah_transaksi
