@@ -16,6 +16,14 @@ Sebelum melakukan pemodelan Machine Learning dengan Python, eksplorasi awal dan 
    SELECT * 
    FROM creditcard 
    LIMIT 5;
+2. **Analisis Ketimpangan Kelas (Extreme Imbalanced Class):**
+   SELECT 
+    Class, 
+    COUNT(*) AS jumlah_transaksi
+   FROM creditcard
+   GROUP BY Class;
+
+Berdasarkan hasil temuan, ditemukan bahwasanya terdapat Transasi Normal (dengan Kelas 0) sebesar 284.315 transaksi (99,83%) dan Transaksi Abnormal/Penipuan/Fraud (dengan Kelas 1) sebesar 492 transaksi (0,17%) dari total keseluruhan transaksi di 100%. Hasil validasi kueri basis data ini membuktikan adanya ketimpangan kelas yang sangat ekstrem (Extreme Class Imbalance), yang menjadi dasar pertimbangan teknis diterapkannya teknik oversampling (SMOTE) dan evaluasi metrik PR-AUC pada tahap pemodelan Python. Skrip kueri lengkap tersimpan pada file eda_creditcard.sql
 
 ## 📊 Eksplorasi Data & Penanganan Ketimpangan (SMOTE)
 Melalui skrip `Prediksi_Fraud.py`, data dinetralkan menggunakan teknik **SMOTE** (*Synthetic Minority Over-sampling Technique*) pada data latih, serta standarisasi fitur menggunakan **RobustScaler** untuk meredam efek *outlier*.
